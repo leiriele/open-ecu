@@ -3,23 +3,6 @@ const path = require("path");
 
 const mapsFilePath = path.join(__dirname, "../data/maps.json");
 
-function calculateInjection(data) {
-  const { rpm, throttle, temperature, map, lambda } = data;
-
-  const baseFuel = rpm * 0.001 + throttle * 0.02;
-  const temperatureCorrection = temperature > 90 ? 0.97 : 1.05;
-  const lambdaCorrection = lambda < 1 ? 1.02 : 0.98;
-  const finalInjectionTime =
-    baseFuel * temperatureCorrection * lambdaCorrection;
-
-  return {
-    baseFuel: Number(baseFuel.toFixed(2)),
-    temperatureCorrection,
-    lambdaCorrection,
-    finalInjectionTime: Number(finalInjectionTime.toFixed(2)),
-  };
-}
-
 function getMaps() {
   const data = fs.readFileSync(mapsFilePath, "utf-8");
   return JSON.parse(data);
@@ -43,7 +26,6 @@ function saveMap(mapData) {
   };
 
   maps.push(newMap);
-
   fs.writeFileSync(mapsFilePath, JSON.stringify(maps, null, 2));
 
   return newMap;
@@ -86,11 +68,80 @@ function deleteMap(id) {
   return removedMap;
 }
 
+function findClosestFuelCell(fuelTable, rpm, load) {
+  let closestCell = null;
+  let smallestDistance = Infinity;
+
+  for (const cell of fuelTable) {
+    const rpmDistance = Math.abs(cell.rpm - rpm);
+    const loadDistance = Math.abs(cell.load - load);
+    const totalDistance = rpmDistance + loadDistance;
+
+    if (totalDistance < smallestDistance) {
+      smallestDistance = totalDistance;
+      closestCell = cell;
+    }
+  }
+
+  return closestCell;
+}
+
+function calculateInjectionFromMap(data) {
+  const { mapId, rpm, throttle, temperature, lambda } = data;
+
+  const selectedMap = getMapById(mapId);
+
+  if (!selectedMap) {
+    return {
+      error: "Mapa não encontrado",
+    };
+  }
+
+  const engineLoad = throttle;
+
+  const closestCell = findClosestFuelCell(
+    selectedMap.fuelTable,
+    rpm,
+    engineLoad
+  );
+
+  if (!closestCell) {
+    return {
+      error: "Tabela de combustível vazia ou inválida",
+    };
+  }
+
+  const baseFuel = closestCell.fuel;
+  const temperatureCorrection = temperature > 90 ? 0.97 : 1.05;
+  const lambdaCorrection = lambda < 1 ? 1.02 : 0.98;
+  const finalInjectionTime =
+    baseFuel * temperatureCorrection * lambdaCorrection;
+
+  return {
+    selectedMap: {
+      id: selectedMap.id,
+      name: selectedMap.name,
+      type: selectedMap.type,
+    },
+    lookup: {
+      rpm,
+      load: engineLoad,
+      closestCell,
+    },
+    calculation: {
+      baseFuel,
+      temperatureCorrection,
+      lambdaCorrection,
+      finalInjectionTime: Number(finalInjectionTime.toFixed(2)),
+    },
+  };
+}
+
 module.exports = {
-  calculateInjection,
   getMaps,
   getMapById,
   saveMap,
   updateMap,
   deleteMap,
+  calculateInjectionFromMap,
 };

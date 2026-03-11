@@ -1,16 +1,17 @@
 const {
-  calculateInjection,
   getMaps,
   getMapById,
   saveMap,
   updateMap,
   deleteMap,
+  calculateInjectionFromMap,
 } = require("../services/ecuService");
 
 function calculateEcu(req, res) {
-  const { rpm, throttle, temperature, map, lambda } = req.body;
+  const { mapId, rpm, throttle, temperature, map, lambda } = req.body;
 
   if (
+    mapId === undefined ||
     rpm === undefined ||
     throttle === undefined ||
     temperature === undefined ||
@@ -18,11 +19,13 @@ function calculateEcu(req, res) {
     lambda === undefined
   ) {
     return res.status(400).json({
-      error: "Campos obrigatórios: rpm, throttle, temperature, map, lambda",
+      error:
+        "Campos obrigatórios: mapId, rpm, throttle, temperature, map, lambda",
     });
   }
 
-  const calculation = calculateInjection({
+  const result = calculateInjectionFromMap({
+    mapId,
     rpm,
     throttle,
     temperature,
@@ -30,9 +33,15 @@ function calculateEcu(req, res) {
     lambda,
   });
 
+  if (result.error) {
+    return res.status(404).json({
+      error: result.error,
+    });
+  }
+
   return res.json({
-    input: { rpm, throttle, temperature, map, lambda },
-    calculation,
+    input: { mapId, rpm, throttle, temperature, map, lambda },
+    result,
   });
 }
 
