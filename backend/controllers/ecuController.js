@@ -46,15 +46,15 @@ function calculateEcu(req, res) {
 }
 
 function createMap(req, res) {
-  const { name, type, fuelTable } = req.body;
+  const { name, type, rpmBins, loadBins, fuelGrid } = req.body;
 
-  if (!name || !type || !fuelTable) {
+  if (!name || !type || !rpmBins || !loadBins || !fuelGrid) {
     return res.status(400).json({
-      error: "Campos obrigatórios: name, type, fuelTable",
+      error: "Campos obrigatórios: name, type, rpmBins, loadBins, fuelGrid",
     });
   }
 
-  const newMap = saveMap({ name, type, fuelTable });
+  const newMap = saveMap({ name, type, rpmBins, loadBins, fuelGrid });
 
   return res.status(201).json(newMap);
 }
@@ -79,9 +79,9 @@ function findMapById(req, res) {
 
 function editMap(req, res) {
   const { id } = req.params;
-  const { name, type, fuelTable } = req.body;
+  const { name, type, rpmBins, loadBins, fuelGrid } = req.body;
 
-  const updatedMap = updateMap(id, { name, type, fuelTable });
+  const updatedMap = updateMap(id, { name, type, rpmBins, loadBins, fuelGrid });
 
   if (!updatedMap) {
     return res.status(404).json({

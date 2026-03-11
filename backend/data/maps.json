@@ -1,55 +1,47 @@
 [
   {
     "id": 1,
-    "name": "Mapa Performance V2",
-    "type": "performance",
-    "fuelTable": [
-      {
-        "rpm": 1000,
-        "load": 20,
-        "fuel": 3.4
-      },
-      {
-        "rpm": 2000,
-        "load": 40,
-        "fuel": 4.3
-      },
-      {
-        "rpm": 3000,
-        "load": 60,
-        "fuel": 5.2
-      }
-    ],
-    "createdAt": "2026-03-11T17:57:04.541Z",
-    "updatedAt": "2026-03-11T18:02:50.352Z"
-  },
-  {
-    "id": 2,
     "name": "Mapa Performance",
     "type": "performance",
-    "fuelTable": [
-      {
-        "rpm": 1000,
-        "load": 20,
-        "fuel": 3.2
-      },
-      {
-        "rpm": 2000,
-        "load": 40,
-        "fuel": 4.1
-      },
-      {
-        "rpm": 3000,
-        "load": 60,
-        "fuel": 5
-      },
-      {
-        "rpm": 4000,
-        "load": 80,
-        "fuel": 6.3
-      }
+    "rpmBins": [
+      1000,
+      2000,
+      3000,
+      4000
     ],
-    "createdAt": "2026-03-11T18:34:43.323Z",
+    "loadBins": [
+      20,
+      40,
+      60,
+      80
+    ],
+    "fuelGrid": [
+      [
+        3,
+        3.2,
+        3.4,
+        3.6
+      ],
+      [
+        3.8,
+        4.1,
+        4.4,
+        4.7
+      ],
+      [
+        4.5,
+        5,
+        5.4,
+        5.8
+      ],
+      [
+        5.2,
+        5.8,
+        6.3,
+        6.9
+      ]
+    ],
+    "createdAt": "2026-03-11T18:47:20.071Z",
     "updatedAt": null
   }
 ]
