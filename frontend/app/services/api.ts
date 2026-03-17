@@ -114,3 +114,35 @@ export async function createSensorReading(
 
   return handleResponse<SensorResponse>(response);
 }
+type CreateMapPayload = {
+  name: string;
+  type: string;
+  rpmBins: number[];
+  loadBins: number[];
+  fuelGrid: number[][];
+};
+
+type MapResponse = {
+  id: number;
+  name: string;
+  type: string;
+  rpmBins: number[];
+  loadBins: number[];
+  fuelGrid: number[][];
+  createdAt: string;
+  updatedAt: string | null;
+};
+
+export async function createMap(
+  payload: CreateMapPayload
+): Promise<MapResponse> {
+  const response = await fetch(`${API_URL}/ecu/maps`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  return handleResponse<MapResponse>(response);
+}
