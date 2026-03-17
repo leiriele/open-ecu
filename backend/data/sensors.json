@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "rpm": 3200,
+    "throttle": 45,
+    "temperature": 92,
+    "map": 1.2,
+    "lambda": 0.98,
+    "createdAt": "2026-03-17T16:22:50.744Z"
+  },
+  {
+    "id": 2,
+    "rpm": 3200,
+    "throttle": 45,
+    "temperature": 92,
+    "map": 1.2,
+    "lambda": 0.98,
+    "createdAt": "2026-03-17T16:23:48.878Z"
+  },
+  {
+    "id": 3,
+    "rpm": 3200,
+    "throttle": 45,
+    "temperature": 92,
+    "map": 1.2,
+    "lambda": 0.98,
+    "createdAt": "2026-03-17T16:30:42.452Z"
+  },
+  {
+    "id": 4,
+    "rpm": 3200,
+    "throttle": 50,
+    "temperature": 5,
+    "map": 1.2,
+    "lambda": 0.98,
+    "createdAt": "2026-03-17T17:06:45.783Z"
+  },
+  {
+    "id": 5,
+    "rpm": 3200,
+    "throttle": 45,
+    "temperature": 95,
+    "map": 1.2,
+    "lambda": 0.98,
+    "createdAt": "2026-03-17T17:14:34.163Z"
+  }
+]

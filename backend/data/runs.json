@@ -1,0 +1,248 @@
+[
+  {
+    "id": 1,
+    "mapId": 1,
+    "sensors": {
+      "id": 3,
+      "rpm": 3200,
+      "throttle": 45,
+      "temperature": 92,
+      "map": 1.2,
+      "lambda": 0.98,
+      "createdAt": "2026-03-17T16:30:42.452Z"
+    },
+    "result": {
+      "selectedMap": {
+        "id": 1,
+        "name": "Mapa Performance",
+        "type": "performance"
+      },
+      "lookup": {
+        "rpm": 3200,
+        "load": 45,
+        "interpolation": {
+          "rpm0": 3000,
+          "rpm1": 4000,
+          "load0": 40,
+          "load1": 60,
+          "q11": 5,
+          "q21": 5.8,
+          "q12": 5.4,
+          "q22": 6.3
+        }
+      },
+      "calculation": {
+        "baseFuel": 5.27,
+        "temperatureCorrection": 0.97,
+        "lambdaCorrection": 1.02,
+        "finalInjectionTime": 5.21
+      }
+    },
+    "createdAt": "2026-03-17T16:31:17.080Z"
+  },
+  {
+    "id": 2,
+    "mapId": 1,
+    "sensors": {
+      "id": 4,
+      "rpm": 3200,
+      "throttle": 50,
+      "temperature": 5,
+      "map": 1.2,
+      "lambda": 0.98,
+      "createdAt": "2026-03-17T17:06:45.783Z"
+    },
+    "result": {
+      "selectedMap": {
+        "id": 1,
+        "name": "Mapa Performance",
+        "type": "performance"
+      },
+      "lookup": {
+        "rpm": 3200,
+        "load": 50,
+        "interpolation": {
+          "rpm0": 3000,
+          "rpm1": 4000,
+          "load0": 40,
+          "load1": 60,
+          "q11": 5,
+          "q21": 5.8,
+          "q12": 5.4,
+          "q22": 6.3
+        }
+      },
+      "calculation": {
+        "baseFuel": 5.37,
+        "temperatureCorrection": 1.05,
+        "lambdaCorrection": 1.02,
+        "finalInjectionTime": 5.75
+      }
+    },
+    "createdAt": "2026-03-17T17:06:50.242Z"
+  },
+  {
+    "id": 3,
+    "mapId": 1,
+    "sensors": {
+      "id": 4,
+      "rpm": 3200,
+      "throttle": 50,
+      "temperature": 5,
+      "map": 1.2,
+      "lambda": 0.98,
+      "createdAt": "2026-03-17T17:06:45.783Z"
+    },
+    "result": {
+      "selectedMap": {
+        "id": 1,
+        "name": "Mapa Performance",
+        "type": "performance"
+      },
+      "lookup": {
+        "rpm": 3200,
+        "load": 50,
+        "interpolation": {
+          "rpm0": 3000,
+          "rpm1": 4000,
+          "load0": 40,
+          "load1": 60,
+          "q11": 5,
+          "q21": 5.8,
+          "q12": 5.4,
+          "q22": 6.3
+        }
+      },
+      "calculation": {
+        "baseFuel": 5.37,
+        "temperatureCorrection": 1.05,
+        "lambdaCorrection": 1.02,
+        "finalInjectionTime": 5.75
+      }
+    },
+    "createdAt": "2026-03-17T17:06:51.665Z"
+  },
+  {
+    "id": 4,
+    "mapId": 1,
+    "sensors": {
+      "id": 4,
+      "rpm": 3200,
+      "throttle": 50,
+      "temperature": 5,
+      "map": 1.2,
+      "lambda": 0.98,
+      "createdAt": "2026-03-17T17:06:45.783Z"
+    },
+    "result": {
+      "selectedMap": {
+        "id": 1,
+        "name": "Mapa Performance",
+        "type": "performance"
+      },
+      "lookup": {
+        "rpm": 3200,
+        "load": 50,
+        "interpolation": {
+          "rpm0": 3000,
+          "rpm1": 4000,
+          "load0": 40,
+          "load1": 60,
+          "q11": 5,
+          "q21": 5.8,
+          "q12": 5.4,
+          "q22": 6.3
+        }
+      },
+      "calculation": {
+        "baseFuel": 5.37,
+        "temperatureCorrection": 1.05,
+        "lambdaCorrection": 1.02,
+        "finalInjectionTime": 5.75
+      }
+    },
+    "createdAt": "2026-03-17T17:06:53.728Z"
+  },
+  {
+    "id": 5,
+    "mapId": 1,
+    "sensors": {
+      "id": 4,
+      "rpm": 3200,
+      "throttle": 50,
+      "temperature": 5,
+      "map": 1.2,
+      "lambda": 0.98,
+      "createdAt": "2026-03-17T17:06:45.783Z"
+    },
+    "result": {
+      "selectedMap": {
+        "id": 1,
+        "name": "Mapa Performance",
+        "type": "performance"
+      },
+      "lookup": {
+        "rpm": 3200,
+        "load": 50,
+        "interpolation": {
+          "rpm0": 3000,
+          "rpm1": 4000,
+          "load0": 40,
+          "load1": 60,
+          "q11": 5,
+          "q21": 5.8,
+          "q12": 5.4,
+          "q22": 6.3
+        }
+      },
+      "calculation": {
+        "baseFuel": 5.37,
+        "temperatureCorrection": 1.05,
+        "lambdaCorrection": 1.02,
+        "finalInjectionTime": 5.75
+      }
+    },
+    "createdAt": "2026-03-17T17:10:16.874Z"
+  },
+  {
+    "id": 6,
+    "mapId": 1,
+    "sensors": {
+      "id": 5,
+      "rpm": 3200,
+      "throttle": 45,
+      "temperature": 95,
+      "map": 1.2,
+      "lambda": 0.98,
+      "createdAt": "2026-03-17T17:14:34.163Z"
+    },
+    "result": {
+      "selectedMap": {
+        "id": 1,
+        "name": "Mapa Performance",
+        "type": "performance"
+      },
+      "lookup": {
+        "rpm": 3200,
+        "load": 45,
+        "interpolation": {
+          "rpm0": 3000,
+          "rpm1": 4000,
+          "load0": 40,
+          "load1": 60,
+          "q11": 5,
+          "q21": 5.8,
+          "q12": 5.4,
+          "q22": 6.3
+        }
+      },
+      "calculation": {
+        "baseFuel": 5.27,
+        "temperatureCorrection": 0.97,
+        "lambdaCorrection": 1.02,
+        "finalInjectionTime": 5.21
+      }
+    },
+    "createdAt": "2026-03-17T17:14:38.098Z"
+  }
+]

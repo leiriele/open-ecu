@@ -1,6 +1,33 @@
-node_modules
+# Dependencies
+node_modules/
+
+# Environment
 .env
-dist
-coverage
+.env.local
+.env.development
+.env.production
+
+# Logs
 *.log
+logs/
+
+# Build
+dist/
+build/
+.next/
+out/
+
+# Coverage
+coverage/
+
+# Temporary
+tmp/
+temp/
+
+# OS
 .DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
