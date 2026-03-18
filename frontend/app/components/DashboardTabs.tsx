@@ -24,7 +24,7 @@ export default function DashboardTabs({
     <div>
       {/* HEADER */}
       <div className="flex items-center justify-between mb-8">
-        <h1 className="text-2xl font-bold">OpenECU Dashboard</h1>
+        <h1 className="text-2xl font-bold">OpenECU - Simulador RPM × Carga</h1>
       </div>
 
       <div className="flex gap-2 mb-6">
