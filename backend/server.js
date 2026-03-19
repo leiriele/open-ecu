@@ -3,7 +3,7 @@ const cors = require("cors");
 const ecuRoutes = require("./routes/ecuRoutes");
 const sensorRoutes = require("./routes/sensorRoutes");
 const runRoutes = require("./routes/runRoutes");
-
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(cors());
@@ -17,6 +17,6 @@ app.use("/ecu", ecuRoutes);
 app.use("/engine", sensorRoutes);
 app.use("/engine", runRoutes);
 
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
